@@ -1,9 +1,21 @@
 import 'package:flutter/material.dart';
 
-// WHITE
-const Color white1=Color.fromRGBO(255, 255, 255, 1);
+// DESCRIPTION COLOR
+const Color white1=Color.fromRGBO(102, 102, 102, 1);
+const Color white2=Color.fromRGBO(255, 255, 255, 1);
 
+//BUTTON TEXT COLOR
+const Color ButtonClr=Color.fromRGBO(14, 14, 14, 1);
 
+//BACKGROUND COLOR
+const Color background=Color.fromRGBO(14, 14, 14, 1);
+
+//GRADIENT
+const Color gradient1=Color.fromRGBO(34, 155, 82, 1);
+const Color gradient2=Color.fromRGBO(153, 153, 153, 1);
+
+//TEXT FORM FIELD COLOR
+const Color Field_Color=Color.fromRGBO(102, 102, 102, 0.54);
 
 //Black
 const Color Black=Color.fromRGBO(0, 0, 0, 1);
@@ -30,7 +42,7 @@ const Color orange3=Color.fromRGBO(255, 241, 199, 1);
 const Color orange4=Color.fromRGBO(245, 181, 10, 1);
 
 //GREEN
-const Color green1=Color.fromRGBO(2, 194, 15, 1);
+const Color green1=Color.fromRGBO(34, 155, 82, 1);
 const Color green2=Color.fromRGBO(231, 249, 241, 1);
 const Color green3=Color.fromRGBO(207, 240, 202, 1);
 const Color green4=Color.fromRGBO(61, 186, 40, 1);

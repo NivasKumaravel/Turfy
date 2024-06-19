@@ -308,7 +308,7 @@ Widget Notification_List(context, {required String NotificationType,required Str
               children: [
                 Text(
                   NotificationType,
-                  style: notificationTitle,
+                  style: phoneHT,
                 ),
                 Text(
                   descriptionT,
@@ -416,7 +416,7 @@ required int StarCount,required,required String count,required String Review }){
             children: [
               Row(
                 children: [
-                  Text(ProfileName,style: Textfield_Style2,maxLines: 2,),
+                  Text(ProfileName,style: phoneHT,maxLines: 2,),
                   const SizedBox(width: 10,),
                   Text(Date,style: timeT,),
                 ],

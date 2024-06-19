@@ -38,7 +38,7 @@ class _CustomAppBarState extends State<Custom_AppBar> {
         centerTitle: true,
         actions:widget.actions,
         title: Text(widget.title.toString(),
-          style:widget.isBlue==true?appTitle2:appTitle,
+          style:widget.isBlue==true?phoneHT:phoneHT,
         ),
 
       );

@@ -2,23 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
 import 'Common_Colors.dart';
 
+//HINTSTYLE
+TextStyle phoneHT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: Color.fromRGBO(102, 102, 102, 1), fontWeight: FontWeight.w700);
+//ABOUT
+TextStyle About=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: white2, fontWeight: FontWeight.w400);
+TextStyle GreenT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: green1, fontWeight: FontWeight.w700);
+TextStyle ButtonT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: ButtonClr, fontWeight: FontWeight.w500);
+TextStyle cardT=TextStyle( fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.w500);
 
-TextStyle LoginT=TextStyle( fontFamily: 'Roboto', fontSize: 24, color: Color.fromRGBO(52, 52, 52, 1), fontWeight: FontWeight.w700);
-TextStyle appTitle=TextStyle( fontFamily: 'Roboto', fontSize: 18, color: brown1, fontWeight: FontWeight.w500);
-TextStyle appTitle2=TextStyle( fontFamily: 'Roboto', fontSize: 18, color: white1, fontWeight: FontWeight.w500);
-TextStyle notificationTitle=TextStyle( fontFamily: 'Nunito', fontSize: 16, color: brown1, fontWeight: FontWeight.w700);
-TextStyle ProuctT=TextStyle( fontFamily: 'Roboto', fontSize: 20, color: Color.fromRGBO(52, 52, 52, 1), fontWeight: FontWeight.w700);
-TextStyle ProductPriceT=TextStyle( fontFamily: 'Roboto', fontSize: 18, color: Color.fromRGBO(52, 52, 52, 1), fontWeight: FontWeight.w500);
-TextStyle phoneHT=TextStyle( fontFamily: 'Roboto', fontSize: 16, color: Color.fromRGBO(140, 140, 140, 1), fontWeight: FontWeight.w400);
-TextStyle Textfield_Style=TextStyle( fontFamily: 'Inter', fontSize: 14, color: Colors.black, fontWeight: FontWeight.w400);
-TextStyle Textfield_Style2=TextStyle( fontFamily: 'Inter', fontSize: 14, color: Colors.black, fontWeight: FontWeight.w500);
-TextStyle StarT=TextStyle(color: Colors.red,fontSize: 25);
 
-TextStyle discountT=TextStyle( fontFamily: 'Inter', fontSize: 14, color: green7, fontWeight: FontWeight.w500);
-TextStyle TaxT=TextStyle( fontFamily: 'Inter', fontSize: 14, color: brown1, fontWeight: FontWeight.w500);
-TextStyle ButtonT=TextStyle( fontFamily: 'Inter', fontSize: 16, color: white1, fontWeight: FontWeight.w500);
 TextStyle ButtonT1=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
-TextStyle cardT=TextStyle( fontFamily: 'Inter', fontSize: 12, color: black5, fontWeight: FontWeight.w700);
 TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
 TextStyle TitleT=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
 TextStyle inboxcompany=TextStyle( fontFamily: 'Inter', fontSize: 18, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);
@@ -199,12 +192,12 @@ Widget Title_Style({required String Title, required bool? isStatus}) {
           // width: 135,
           child: Text(
             Title,
-            style: Textfield_Style2,
+            style: phoneHT,
           ),
         ),
         Text(
           isStatus == true ? "*" : "",
-          style: StarT,
+          style: phoneHT,
         )
       ],
     ),

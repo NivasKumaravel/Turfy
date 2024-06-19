@@ -4,7 +4,7 @@ import 'package:searchfield/searchfield.dart';
 import '../utilits/Common_Colors.dart';
 import '../utilits/Text_Style.dart';
 
-//TEXTFORM FIELD
+//TEXTFORM FIELD Main
 
 Widget textFormField(
     {TextEditingController? Controller,
@@ -28,18 +28,18 @@ Widget textFormField(
         hintStyle: phoneHT,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Black),
+          borderSide: BorderSide(color: white1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: Black),
+          borderSide: BorderSide(color:white1),
         ),
-          fillColor: white1,
+          fillColor: Field_Color,
         filled: true,
       ),
       onChanged: onChanged,
       textInputAction: TextInputAction.next,
-      style: Textfield_Style,
+      style: phoneHT,
         keyboardType: keyboardtype,
   ),
     );
@@ -83,7 +83,7 @@ Widget textFormField2(
         ),
         onChanged: onChanged,
         textInputAction: TextInputAction.next,
-        style: Textfield_Style,
+        style: phoneHT,
         keyboardType: keyboardtype,
       ),
     );
@@ -175,7 +175,7 @@ Widget textFieldPassword(
       onChanged: onChanged,
       textInputAction: TextInputAction.next,
       keyboardType: keyboardtype,
-      style: Textfield_Style,
+      style: phoneHT,
     ),
   );
 }
@@ -215,7 +215,7 @@ Widget textfieldDescription({
         filled: true,
       ),
       textInputAction: TextInputAction.next,
-      style: Textfield_Style,
+      style: phoneHT,
     ),
   );
 }
@@ -263,7 +263,7 @@ Widget textFormFieldSearchBar(
 
         onChanged: onChanged,
         textInputAction: TextInputAction.next,
-        style: Textfield_Style,
+        style: phoneHT,
         keyboardType: keyboardtype,
       ),
     );
