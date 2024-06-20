@@ -3,20 +3,36 @@ import 'package:turfy/Common_Widgets/Image_Path.dart';
 import 'Common_Colors.dart';
 
 //HINTSTYLE
-TextStyle phoneHT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: Color.fromRGBO(102, 102, 102, 1), fontWeight: FontWeight.w700);
+TextStyle phoneHT=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: Color.fromRGBO(173, 173, 173, 1), fontWeight: FontWeight.w500);
 //ABOUT
 TextStyle About=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: white2, fontWeight: FontWeight.w400);
-TextStyle GreenT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: green1, fontWeight: FontWeight.w700);
+TextStyle GreenT=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: gradient1, fontWeight: FontWeight.w500);
+
+//SEARCH HINT
+TextStyle SearchT=TextStyle( fontFamily: 'Rubik', fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1), fontWeight: FontWeight.w300);
+
+
+TextStyle Forget_password=TextStyle(
+  decoration: TextDecoration.underline,
+  decorationColor: gradient1,
+  decorationThickness: 2,
+  fontFamily: 'Poppins',
+  fontSize: 14,
+  color: gradient1,
+  fontWeight: FontWeight.w500,
+);
 TextStyle ButtonT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: ButtonClr, fontWeight: FontWeight.w500);
+TextStyle lighttext=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: white1, fontWeight: FontWeight.w500);
 TextStyle cardT=TextStyle( fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.w500);
+TextStyle profileT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: white2, fontWeight: FontWeight.w500);
+TextStyle ListT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: white2, fontWeight: FontWeight.w500);
 
 
-TextStyle ButtonT1=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
+
 TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
 TextStyle TitleT=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
 TextStyle inboxcompany=TextStyle( fontFamily: 'Inter', fontSize: 18, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);
 TextStyle TBlack=TextStyle( fontFamily: 'Inter', fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);
-TextStyle profileT=TextStyle( fontFamily: 'Inter', fontSize: 22, color: black6, fontWeight: FontWeight.w500);
 TextStyle noDataT1=TextStyle( fontFamily: 'Inter', fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600);
 TextStyle appLoginT=TextStyle( fontFamily: 'Inter', fontSize: 22, color: black4, fontWeight: FontWeight.w500);
 TextStyle signUpT=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
@@ -78,17 +94,6 @@ TextStyle offerT=TextStyle( fontFamily: 'Inter', fontSize: 14, color:grey1, font
 
 TextStyle mapT3=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w500);
 
-TextStyle pdfT = TextStyle(
-    fontFamily: 'Inter',
-    fontSize: 16,
-    color: Color.fromRGBO(0, 0, 0, 1),
-    fontWeight: FontWeight.w600);
-
-TextStyle TextField_titleClickable = TextStyle(
-    fontFamily: 'Inter',
-    fontSize: 16,
-    color: brown1,
-    fontWeight: FontWeight.w500);
 
 
 
@@ -213,14 +218,14 @@ Widget RadioTerms(String txt1,String txt2,void Function()? onTap1,void Function(
           onTap: onTap1,
           child: Text(
             txt1,
-            style: TextField_titleClickable,
+            style: mapT3,
           ),
         ),
         InkWell(
           onTap: onTap2,
           child: Text(
             txt2,
-            style: TextField_titleClickable,
+            style: mapT3,
           ),
         ),
       ],

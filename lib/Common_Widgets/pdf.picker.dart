@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Container(
                             width: MediaQuery.of(context).size.width/2,
-                            child: Text(_selectedFiles[index].path.split('/').last,style: pdfT,overflow: TextOverflow.ellipsis,maxLines: 2,)),
+                            child: Text(_selectedFiles[index].path.split('/').last,style: mapT3,overflow: TextOverflow.ellipsis,maxLines: 2,)),
                         Spacer(),
                         InkWell(
                           onTap: (){

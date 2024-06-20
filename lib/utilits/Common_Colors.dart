@@ -50,11 +50,6 @@ const Color green5=Color.fromRGBO(61, 186, 40, 1);
 const Color green6=Color.fromRGBO(60, 174, 92, 1);
 const Color green7=Color.fromRGBO(59, 168, 89, 1);
 
-//YELLOW
-const Color yellow1=Color.fromRGBO(255, 184, 0, 1);
-
-//VIOLET
-const Color violet1=Color.fromRGBO(242, 237, 255, 1);
 
 //BROWN
 const Color brown1=Color.fromRGBO(64, 13, 10, 1);

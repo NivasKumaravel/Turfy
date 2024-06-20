@@ -265,7 +265,7 @@ Widget Notification_List(context, {required String NotificationType,required Str
       ImgPath = 'award.svg';
       break;
     case "Payment Notification":
-      containerColor = violet1;
+      containerColor = green1;
       ImgPath = 'creditcard1.svg';
       break;
     case "Cashback":

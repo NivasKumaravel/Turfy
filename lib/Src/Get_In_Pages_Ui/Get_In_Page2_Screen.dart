@@ -29,47 +29,57 @@ class _Get_In_Page2State extends State<Get_In_Page2> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: background,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.only(bottom: 50),
-          child: Column(
-            children: [
-              Stack(
+      body: _Mainbody(),
+    );
+  }
+
+  Widget _Mainbody (){
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.only(bottom: 50),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+
+                //IMAGE
+                ImgPathPng('page2.png'),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20,right: 20),
+              child: Column(
                 children: [
-                  ImgPathPng('page2.png'),
+                  ShaderMask(
+                      shaderCallback: (Rect rect) {
+                        return _gradient.createShader(rect);
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 10,bottom: 20),
+                        child: Text('Reserve your turf, ignite your passion. Book your slot now and play to win.',
+                          style: cardT.copyWith(color: Colors.white),
+                          textAlign: TextAlign.center,),
+                      )),
+                  Text('Take charge of your turf experience with easy slot booking. Reserve your playtime and conquer the field with confidence.',
+                      textAlign: TextAlign.center,
+                      style: About
+                  ),
+
+                  //PAGE INDICATOR
+                  Padding(
+                    padding: const EdgeInsets.only(top: 25,bottom: 15),
+                    child: ImgPathSvg('page2indicator.svg'),
+                  ),
+                  const SizedBox(height: 100,),
+
+                  //BUTTON
+                  CommonContainerButton(context, "Next", () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Get_In_Page3()));
+                  }),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(left: 20,right: 20),
-                child: Column(
-                  children: [
-                    ShaderMask(
-                        shaderCallback: (Rect rect) {
-                          return _gradient.createShader(rect);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 10,bottom: 20),
-                          child: Text('Reserve your turf, ignite your passion. Book your slot now and play to win.',
-                            style: cardT.copyWith(color: Colors.white),
-                            textAlign: TextAlign.center,),
-                        )),
-                    Text('Take charge of your turf experience with easy slot booking. Reserve your playtime and conquer the field with confidence.',
-                        textAlign: TextAlign.center,
-                        style: About
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 25,bottom: 15),
-                      child: ImgPathSvg('page2indicator.svg'),
-                    ),
-                    const SizedBox(height: 100,),
-                    CommonContainerButton(context, "Next", () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Get_In_Page3()));
-                    }),
-                  ],
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

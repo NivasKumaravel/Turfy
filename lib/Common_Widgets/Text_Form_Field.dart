@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:searchfield/searchfield.dart';
+import 'package:turfy/Common_Widgets/Image_Path.dart';
 import '../utilits/Common_Colors.dart';
 import '../utilits/Text_Style.dart';
 
 //TEXTFORM FIELD Main
-
 Widget textFormField(
     {TextEditingController? Controller,
     String? Function(String?)? validating,
      bool? isEnabled,
-    void Function(String)? onChanged,required String hintText,List<TextInputFormatter>? inputFormatters,required TextInputType keyboardtype}) {
+    void Function(String)? onChanged,
+      required String hintText,List<TextInputFormatter>? inputFormatters,
+      required TextInputType keyboardtype,
+      required String icon,
+    }) {
   return
     Container(
       // height: 50,
@@ -28,13 +31,17 @@ Widget textFormField(
         hintStyle: phoneHT,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color: white1),
+          //borderSide: BorderSide(color: white1),
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10),
-          borderSide: BorderSide(color:white1),
+          //borderSide: BorderSide(color:white1),
         ),
           fillColor: Field_Color,
+        prefixIcon: Padding(
+          padding: const EdgeInsets.only(left: 10,right: 10),
+          child: ImgPathSvg(icon),
+        ),
         filled: true,
       ),
       onChanged: onChanged,
@@ -44,49 +51,53 @@ Widget textFormField(
   ),
     );
 }
-//white
-Widget textFormField2(
+
+//TEXTFORM FIELD PASSWORD
+Widget textFieldPassword(
     {TextEditingController? Controller,
       String? Function(String?)? validating,
-      bool? isEnabled,
-      void Function(String)? onChanged,required String hintText,List<TextInputFormatter>? inputFormatters,required TextInputType keyboardtype}) {
-  return
-    Container(
+      void Function(String)? onChanged,
+      required bool obscure,
+      required void Function()? onPressed,
+      required String hintText,
+      required TextInputType keyboardtype}) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 15),
+    child: Container(
       // height: 50,
-      child:
-      TextFormField(
-        enabled: isEnabled,
+      child: TextFormField(
         controller: Controller,
-        textCapitalization: TextCapitalization.none,
-        inputFormatters: inputFormatters,
+        obscureText: obscure,
         validator: validating,
         decoration: InputDecoration(
-          contentPadding:
-          EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
+          contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
           hintText: hintText,
-          hintStyle: TextStyle(
-            fontFamily: "Inter",
-            fontWeight: FontWeight.w400,
-            fontSize: 12.0,
-            color: Colors.grey,
-          ),
+          hintStyle: phoneHT,
           border: OutlineInputBorder(
+            //borderSide: BorderSide(color: white1),
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: white1),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: white1),
+              //borderSide: BorderSide(color: white1),
+              borderRadius: BorderRadius.circular(10)),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.only(left: 10,right: 10),
+            child: ImgPathSvg('lock.svg'),
           ),
-          fillColor: white1,
+          suffixIcon: IconButton(
+            icon:obscure ? Icon(Icons.visibility_off,color: white2,) : ImgPathSvg('eye.svg'),
+            onPressed: onPressed,
+          ),
+          fillColor: Field_Color,
           filled: true,
         ),
         onChanged: onChanged,
         textInputAction: TextInputAction.next,
-        style: phoneHT,
         keyboardType: keyboardtype,
+        style: phoneHT,
       ),
-    );
+    ),
+  );
 }
 
 //TEXTFIELD DATE PICKER
@@ -139,47 +150,6 @@ Widget TextFieldDatePicker({TextEditingController? Controller,
   );
 }
 
-// TEXT FIELD PASSWORD
-Widget textFieldPassword(
-    {TextEditingController? Controller,
-  String? Function(String?)? validating,
-  void Function(String)? onChanged,required bool obscure,required void Function()? onPressed,required String hintText,required TextInputType keyboardtype}){
-  return  Container(
-    // height: 50,
-    child:
-    TextFormField(
-      controller: Controller,
-      obscureText: obscure,
-      validator:validating,
-      decoration: InputDecoration(
-        contentPadding:
-        EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-        hintText: hintText,
-        hintStyle: phoneHT,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: white1),
-          borderRadius: BorderRadius.circular(10)
-        ),
-        suffixIcon: IconButton(
-          icon: Icon(obscure
-              ? Icons.lock
-              : Icons.lock_open,color: white1,),
-          onPressed: onPressed,
-        ),
-        fillColor: white1,
-        filled: true,
-      ),
-      onChanged: onChanged,
-      textInputAction: TextInputAction.next,
-      keyboardType: keyboardtype,
-      style: phoneHT,
-    ),
-  );
-}
-
 
 //DESCRIPTION
 Widget textfieldDescription({
@@ -220,6 +190,8 @@ Widget textfieldDescription({
   );
 }
 
+
+
 //SEARCH BAR
 Widget textFormFieldSearchBar(
     {
@@ -250,17 +222,15 @@ Widget textFormFieldSearchBar(
           hintStyle: phoneHT,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: white1),
           ),
           enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(width: 1,color: Field_Color ),
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(color: white1),
           ),
-          fillColor: white1,
+          fillColor: Field_Color,
           filled: true,
-          prefixIcon: Icon(Icons.search,size: 24,color: grey2,),
+          prefixIcon: Icon(Icons.search,size: 24,color: white2,),
         ),
-
         onChanged: onChanged,
         textInputAction: TextInputAction.next,
         style: phoneHT,
@@ -268,115 +238,6 @@ Widget textFormFieldSearchBar(
       ),
     );
 }
-
-
-  Widget buildCompanyInfoRow(String pathPNG, String companyName,
-    TextStyle textStyle, double imageWidth, double imageHeight) {
-  return Container(
-    child: Row(
-      children: [
-        Container(
-          height: imageHeight,
-          width: imageWidth,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
-            image: DecorationImage(image: AssetImage("lib/assets/$pathPNG"),
-              fit: BoxFit.cover
-            )
-          ),
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Container(
-            child: Text(
-              companyName,
-              style: textStyle,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-Widget collegeRowTitle(String pathPNG, String companyName,
-    TextStyle textStyle, double imageWidth, double imageHeight) {
-  return Container(
-    child: Row(
-      children: [
-        Container(
-          height: imageHeight,
-          width: imageWidth,
-          child: Image(
-            image: AssetImage("lib/assets/$pathPNG"),
-            fit: BoxFit.contain,
-          ),
-        ),
-        SizedBox(
-          width: 10,
-        ),
-        Expanded(
-          child: Container(
-            child: Text(
-              companyName,
-              style: textStyle,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-            ),
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-
-
-
-
-
-
-//DropDownExperience
-Widget dropDownField(context,{required String? value,required List<String>? listValue,required void Function(String?)? onChanged}){
-  return  Container(
-    height: 50,
-    width: MediaQuery.of(context).size.width,
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: white1
-    ),
-    child:  DropdownButtonFormField<String>(
-      value: value,
-      isExpanded: true,
-      decoration:
-      InputDecoration(border: InputBorder.none),
-      icon: Padding(
-        padding: const EdgeInsets.only(right: 10),
-        child: Icon(
-          Icons.keyboard_arrow_down_sharp,
-          color: Colors.black,size: 35,
-        ),
-      ),
-      items: listValue?.map((String option) {
-        return DropdownMenuItem<String>(
-          value: option,
-          child: Padding(
-            padding: const EdgeInsets.only(left: 10,),
-            child: Text(option),
-          ),
-        );
-      }).toList(),
-      onChanged: onChanged,
-    ),
-  );
-}
-
-
-
 
 
 class TimePickerFormField extends StatefulWidget {
@@ -476,91 +337,4 @@ class _TimePickerFormFieldState extends State<TimePickerFormField> {
   }
 }
 
-//CHAT FIELD
-// Widget Chat_Field(context,
-//     {TextEditingController? Controller,
-//       String? Function(String?)? validating,
-//       required void Function()? onTap,
-//       bool? isEnabled,
-//       void Function(String)? onChanged,required String hintText,List<TextInputFormatter>? inputFormatters,required TextInputType keyboardtype}) {
-//   return
-//     Container(
-//       // height: 50,
-//       child:
-//       TextFormField(
-//         enabled: isEnabled,
-//         readOnly: false,
-//         controller: Controller,
-//         textCapitalization: TextCapitalization.none,
-//         inputFormatters: inputFormatters,
-//         validator: validating,
-//         decoration: InputDecoration(
-//           suffixIcon: Padding(
-//             padding: const EdgeInsets.only(right: 30,top: 5,bottom: 5),
-//             child: Chat_Button(context, onTap),
-//           ),
-//           contentPadding:
-//           EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-//           hintText: hintText,
-//           hintStyle: phoneHT,
-//           border: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(10),
-//             borderSide: BorderSide(color: white2),
-//           ),
-//           enabledBorder: OutlineInputBorder(
-//             borderRadius: BorderRadius.circular(10),
-//             borderSide: BorderSide(color: white2),
-//
-//           ),
-//           fillColor: white2,
-//           filled: true,
-//         ),
-//         onChanged: onChanged,
-//         textInputAction: TextInputAction.next,
-//         style: Textfield_Style,
-//         keyboardType: keyboardtype,
-//       ),
-//     );
-// }
-
-// Widget dropDownSearchField(context,
-//     {required FocusNode? focus,
-//       required List<Locations> listValue,
-//       required String? Function(String?)? validator,
-//       required void Function(String?)? searchText,
-//       required void Function(SearchFieldListItem<Locations> x)? onChanged,
-//       required String hintT}) {
-//   return
-//     SearchField(
-//     focusNode: focus,
-//     suggestionDirection: SuggestionDirection.down,
-//     suggestions: listValue
-//         .map((e) => SearchFieldListItem<Locations>(e.city ?? ""))
-//         .toList(),
-//     suggestionState: Suggestion.expand,
-//     suggestionsDecoration: SuggestionDecoration(padding: EdgeInsets.all(10)),
-//     textInputAction: TextInputAction.next,
-//     searchStyle: Textfield_Style,
-//     validator: validator,
-//     searchInputDecoration: InputDecoration(
-//       contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
-//       hintText: hintT,
-//       hintStyle: phoneHT,
-//       border: OutlineInputBorder(
-//         borderRadius: BorderRadius.circular(10),
-//         borderSide: BorderSide(color: Black),
-//       ),
-//       enabledBorder: OutlineInputBorder(
-//         borderRadius: BorderRadius.circular(10),
-//         borderSide: BorderSide(color: Black),
-//       ),
-//       fillColor: white2,
-//       filled: true,
-//     ),
-//     maxSuggestionsInViewPort: 5,
-//     itemHeight: 40,
-//     onSuggestionTap: onChanged,
-//     onSubmit: searchText,
-//   );
-// }
 
