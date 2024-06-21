@@ -7,8 +7,15 @@ const Color white2=Color.fromRGBO(255, 255, 255, 1);
 //BUTTON TEXT COLOR
 const Color ButtonClr=Color.fromRGBO(14, 14, 14, 1);
 
+const Color Sbutton=Color.fromRGBO(34, 202, 102, 1);
+
+const Color location=Color.fromRGBO(178, 186, 198, 1);
+
 //BACKGROUND COLOR
 const Color background=Color.fromRGBO(14, 14, 14, 1);
+
+//RATING COLOR
+const Color loaderclr=Color.fromRGBO(255, 215, 0, 1);
 
 //GRADIENT
 const Color gradient1=Color.fromRGBO(34, 155, 82, 1);

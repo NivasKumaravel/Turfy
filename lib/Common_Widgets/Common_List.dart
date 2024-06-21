@@ -4,253 +4,31 @@ import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 import 'Image_Picker.dart';
 
-//TASK CATEGORY
-Widget Task_Category({required String toolImg}) {
-  return Container(
-    height: 60,
-    width: 60,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10),
-      color: brown1,
-    ),
-    child: Center(child: buildImage(
-        toolImg,
-        border: const Radius.circular(10),
-        fit: BoxFit.cover) ),
-  );
-}
-
-//OUR TASK
-Widget Our_Task({required String TaskImg,
-  required String TaskDetail,
-  required String TaskType,
-  required String RatingCount,
-required String TaskName,
-required String price}) {
-  return ClipRRect(
-    borderRadius: BorderRadius.circular(15),
-    child: Card(
-      elevation: 5,
+Widget Turf_list (context,{required String image,required String text}){
+  return Padding(
+      padding: const EdgeInsets.only(right: 10,left: 10),
       child: Stack(
         children: [
-          Container(
-            width: 170,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15), color: white1),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
+          ImgPathPng(image),
+          Positioned(
+              bottom: 10,left: 10,
+              child: Container(
+                  width: MediaQuery.sizeOf(context).width/6.5,
+                  child: Text(text,style: cardT,))),
+          Positioned(
+            bottom: 9,left: 60,
+            child: Row(
               children: [
-                Container(
-                  height: 150,
-                  width: 170,
-                  child: borderbuildImage(
-                      TaskImg,
-                      border:15,
-                      fit: BoxFit.cover),
-                ),
-                Container(
-                    margin:
-                        EdgeInsets.only(top: 15, bottom: 5, left: 15, right: 15),
-                    child: Text(
-                      TaskDetail,
-                      style: cardT,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                    )),
-                service_Type(
-                  isLarged: false,
-                  ServiceTtpe: TaskType,
-                  Rating: RatingCount,
-                  Count: 0,
-                ),
+                ImgPathSvg('fillstar.svg'),
+                ImgPathSvg('fillstar.svg'),
+                ImgPathSvg('fillstar.svg'),
+                ImgPathSvg('fillstar.svg'),
+                ImgPathSvg('star.svg'),
               ],
             ),
-          ),
-          //TAGS
-          Positioned(
-            top: 7,
-            left: 10,
-            child: Container(
-              width: 80,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5), color: brown1),
-              child: Center(
-                  child: Padding(
-                padding:
-                    const EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
-                child: Text(
-                  TaskName,
-                  style: TagsT,
-                ),
-              )),
-            ),
-          ),
-          //PRICE TAG
-          Positioned(
-            top: 135,
-            right: 10,
-            child: Container(
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(5),
-                  border: Border.all(width: 2, color: white1),
-                  color: brown1),
-              child: Padding(
-                padding:
-                    const EdgeInsets.only(left: 9, right: 9, top: 3, bottom: 3),
-                child: Text(
-                  '₹ ${price}',
-                  style: priceT,
-                ),
-              ),
-            ),
-          ),
+          )
         ],
-      ),
-    ),
-  );
-}
-
-//CATEGORY LIST SCREEN
-Widget Category_Tab_List(context,
-    {required String CardImg,
-    required String TaskDetail,
-    required String ServiceType,
-    required String Rating,
-    required String TaskName,
-    required int startCount,
-      required String price,
-      required bool isTagUsed,
-      required String isBookingTag
-    }) {
-  Color containerColor;
-  switch (isBookingTag) {
-    case "Completed":
-      containerColor = green6;
-      break;
-    case "Rejected":
-      containerColor = brown1;
-      break;
-    case "Failed":
-      containerColor = brown1;
-      break;
-    case "Reschdule":
-      containerColor = brown1;
-      break;
-    case "Pending":
-      containerColor = orange4;
-      break;
-    default:
-      containerColor = Colors.black;
-      break;
-  }
-  return Card(
-    elevation: 5,
-    child: Stack(
-      children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15), color: white1),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                height: 160,
-                width: MediaQuery.of(context).size.width,
-                child: borderbuildImage(
-                    CardImg,
-                    border: 15,
-                    fit: BoxFit.cover),
-              ),
-              Container(
-                  margin:
-                      EdgeInsets.only(top: 15, bottom: 5, left: 15, right: 15),
-                  child: Text(
-                    TaskDetail,
-                    style: cardDetailT,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                  )),
-              service_Type(
-                isLarged: true,
-                ServiceTtpe: ServiceType,
-                Rating: Rating,
-                Count: startCount,
-              ),
-            ],
-          ),
-        ),
-        Positioned(
-          top: 7,
-          left: 10,
-          child: Container(
-            width: 120,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5), color: brown1),
-            child: Center(
-                child: Padding(
-                  padding:
-                  const EdgeInsets.only(left: 8, right: 8, top: 4, bottom: 4),
-                  child: Text(
-                    TaskName,
-                    style: TagsT,
-                  ),
-                )),
-          ),
-        ),
-
-        // //FAVOURITE
-        // Positioned(
-        //   top: 7,
-        //   right: 10,
-        //   child: CircleAvatar(
-        //     radius: 15,
-        //     backgroundColor: white1,
-        //     child: Icon(
-        //       Icons.favorite_border,
-        //       color: yellow1,
-        //     ),
-        //   ),
-        // ),
-        //PRICE TAG  & BOOKING TAG
-        isTagUsed==true?
-        Positioned(
-          top: 145,
-          right: 10,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                color: containerColor),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 5,bottom: 5,left: 10,right: 10),
-              child: Text(isBookingTag,style: TagsT),
-            ),
-          ),
-        ):
-        Positioned(
-          top: 140,
-          right: 10,
-          child: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5),
-                border: Border.all(width: 5, color: white1),
-                color: brown1),
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(left: 9, right: 9, top: 3, bottom: 3),
-              child: Text(
-                '₹ ${price}',
-                style: priceT2,
-              ),
-            ),
-          ),
-        ),
-
-
-      ],
-    ),
+      )
   );
 }
 

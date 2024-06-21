@@ -8,9 +8,15 @@ TextStyle phoneHT=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: Color.f
 TextStyle About=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: white2, fontWeight: FontWeight.w400);
 TextStyle GreenT=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: gradient1, fontWeight: FontWeight.w500);
 
+
+TextStyle locationT=TextStyle( fontFamily: 'Poppins', fontSize: 11, color:location, fontWeight: FontWeight.w400,);
+TextStyle locationT1=TextStyle( fontFamily: 'Rubik', fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1), fontWeight: FontWeight.w600);
+
+
 //SEARCH HINT
 TextStyle SearchT=TextStyle( fontFamily: 'Rubik', fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1), fontWeight: FontWeight.w300);
 
+TextStyle cardT=TextStyle( fontFamily: 'Poppins', fontSize: 12,color: white2, fontWeight: FontWeight.w400);
 
 TextStyle Forget_password=TextStyle(
   decoration: TextDecoration.underline,
@@ -23,28 +29,21 @@ TextStyle Forget_password=TextStyle(
 );
 TextStyle ButtonT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: ButtonClr, fontWeight: FontWeight.w500);
 TextStyle lighttext=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: white1, fontWeight: FontWeight.w500);
-TextStyle cardT=TextStyle( fontFamily: 'Poppins', fontSize: 20, fontWeight: FontWeight.w500);
 TextStyle profileT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: white2, fontWeight: FontWeight.w500);
 TextStyle ListT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: white2, fontWeight: FontWeight.w500);
+TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);TextStyle TitleT=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);TextStyle inboxcompany=TextStyle( fontFamily: 'Inter', fontSize: 18, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);TextStyle TBlack=TextStyle( fontFamily: 'Inter', fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);TextStyle noDataT1=TextStyle( fontFamily: 'Inter', fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600);TextStyle appLoginT=TextStyle( fontFamily: 'Inter', fontSize: 22, color: black4, fontWeight: FontWeight.w500);TextStyle signUpT=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);TextStyle richtext1=TextStyle( fontFamily: 'Inter', fontSize: 12, color: grey1, fontWeight: FontWeight.w500);TextStyle richtext2=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
+
+TextStyle Descripton_headT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: gradient1, fontWeight: FontWeight.w500);
+TextStyle Descripton_locationT=TextStyle( fontFamily: 'Poppins', fontSize: 13, color: white2, fontWeight: FontWeight.w700);
 
 
+TextStyle ratingleading=TextStyle( fontFamily: 'Poppins', fontSize: 10, color: white2, fontWeight: FontWeight.w700);
 
-TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
-TextStyle TitleT=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
-TextStyle inboxcompany=TextStyle( fontFamily: 'Inter', fontSize: 18, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);
-TextStyle TBlack=TextStyle( fontFamily: 'Inter', fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);
-TextStyle noDataT1=TextStyle( fontFamily: 'Inter', fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600);
-TextStyle appLoginT=TextStyle( fontFamily: 'Inter', fontSize: 22, color: black4, fontWeight: FontWeight.w500);
-TextStyle signUpT=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
-TextStyle richtext1=TextStyle( fontFamily: 'Inter', fontSize: 12, color: grey1, fontWeight: FontWeight.w500);
-TextStyle richtext2=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
-
+TextStyle Trating=TextStyle( fontFamily: 'Poppins', fontSize: 40, color: white2, fontWeight: FontWeight.w700);
 
 
 //NOTIFICATION
-TextStyle notificationT=TextStyle( fontFamily: 'Roboto', fontSize: 8, color: white1, fontWeight: FontWeight.w400);
 //LOCATION
-TextStyle locationT=TextStyle( fontFamily: 'Roboto', fontSize: 11, color:black4, fontWeight: FontWeight.w500,letterSpacing: 2);
 //VIEW ALL
 TextStyle viewAllT=TextStyle( fontFamily: 'Roboto', fontSize: 14, color:grey1, fontWeight: FontWeight.w500,);
 //PRIMARY TEXT STYLE

@@ -25,3 +25,28 @@ Widget CommonContainerButton(
     ),
   );
 }
+
+// ELEVATED BUTTON
+Widget CommonContainerButton2(
+    BuildContext context,
+    String titleName,
+    void Function()? onPress,
+    ){
+  return Container(
+    //height: MediaQuery.sizeOf(context).height/18,
+    width: MediaQuery.sizeOf(context).width/2.1,
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Sbutton,
+        minimumSize: Size(double.infinity, 50),
+        elevation: 9,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+      ),
+      onPressed: onPress,
+      child: Text(
+        titleName,
+        style: ButtonT,
+      ),
+    ),
+  );
+}
