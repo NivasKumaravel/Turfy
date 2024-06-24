@@ -1,9 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:r_dotted_line_border/r_dotted_line_border.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 import 'Image_Picker.dart';
 
+
+Widget Coupons (){
+  return Padding(
+    padding: const EdgeInsets.only(top: 20),
+    child: Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        color: container,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              height: 45,width: 130,
+              decoration: BoxDecoration(
+                  border: RDottedLineBorder.all(
+                      width: 1.5,
+                      color: green1,
+                      dottedLength: 5
+                  )
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Center(child: Text('AB235YU1P',style: CouponT,)),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(top: 20,bottom: 20),
+              child: Text('\$150 off on minimum purchase of \$250',style:CouponT1,),
+            ),
+            Row(
+              children: [
+                Text('Expire Date :',style: CouponT2,),
+                Text(' 02 Dec, 2022',style: CouponT1,)
+              ],
+            )
+          ],
+        ),
+      ),
+    ),
+  );
+}
 Widget Turf_list (context,{required String image,required String text}){
   return Padding(
       padding: const EdgeInsets.only(right: 10,left: 10),

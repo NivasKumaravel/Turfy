@@ -8,10 +8,28 @@ TextStyle phoneHT=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: Color.f
 TextStyle About=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: white2, fontWeight: FontWeight.w400);
 TextStyle GreenT=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: gradient1, fontWeight: FontWeight.w500);
 
+TextStyle TAmount=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: green1, fontWeight: FontWeight.w600);
+
+TextStyle CouponT=TextStyle( fontFamily: 'Work Sans', fontSize: 14, color: green1, fontWeight: FontWeight.w400);
+
+TextStyle CouponT1=TextStyle( fontFamily: 'Work Sans', fontSize: 14, color: white2, fontWeight: FontWeight.w500);
+TextStyle CouponT2=TextStyle( fontFamily: 'Work Sans', fontSize: 14, color: expidate, fontWeight: FontWeight.w500);
+TextStyle Couponpop=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: coupon_Pop2, fontWeight: FontWeight.w500);
+
+
+TextStyle largetext=TextStyle( fontFamily: 'Poppins', fontSize:30, color: Color.fromRGBO(34, 155, 82, 1), fontWeight: FontWeight.w700);
+TextStyle bookslotT=TextStyle( fontFamily: 'Poppins', fontSize: 13, color: white2, fontWeight: FontWeight.w400);
+TextStyle Slot=TextStyle( fontFamily: 'Rubik', fontSize: 16, color: Color.fromRGBO(255, 255, 255, 1), fontWeight: FontWeight.w400);
+TextStyle Rtext=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: Color.fromRGBO(255, 255, 255, 1), fontWeight: FontWeight.w500);
+TextStyle BText=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: Color.fromRGBO(45, 99, 239, 1), fontWeight: FontWeight.w600);
+
 
 TextStyle locationT=TextStyle( fontFamily: 'Poppins', fontSize: 11, color:location, fontWeight: FontWeight.w400,);
 TextStyle locationT1=TextStyle( fontFamily: 'Rubik', fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1), fontWeight: FontWeight.w600);
 
+TextStyle Amenities=TextStyle( fontFamily: 'Poppins', fontSize: 12, color:ButtonClr, fontWeight: FontWeight.w700,);
+
+TextStyle paymentsummary=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: green1, fontWeight: FontWeight.w500);
 
 //SEARCH HINT
 TextStyle SearchT=TextStyle( fontFamily: 'Rubik', fontSize: 14, color: Color.fromRGBO(189, 189, 189, 1), fontWeight: FontWeight.w300);
@@ -35,6 +53,8 @@ TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fr
 
 TextStyle Descripton_headT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: gradient1, fontWeight: FontWeight.w500);
 TextStyle Descripton_locationT=TextStyle( fontFamily: 'Poppins', fontSize: 13, color: white2, fontWeight: FontWeight.w700);
+TextStyle timecontainer=TextStyle( fontFamily: 'Poppins', fontSize: 16, color: gradient1, fontWeight: FontWeight.w600);
+TextStyle TabT=TextStyle( fontFamily: 'Work Sans', fontSize: 16, color: Color.fromRGBO(28, 31, 52, 1), fontWeight: FontWeight.w500);
 
 
 TextStyle ratingleading=TextStyle( fontFamily: 'Poppins', fontSize: 10, color: white2, fontWeight: FontWeight.w700);
@@ -69,7 +89,7 @@ TextStyle chattimeT=TextStyle( fontFamily: 'Inter', fontSize: 10, color:white1, 
 TextStyle priceT2=TextStyle( fontFamily: 'Inter', fontSize: 16, color:white1, fontWeight: FontWeight.w600,);
 //BEST DEAL
 TextStyle bestT=TextStyle( fontFamily: 'Inter', fontSize: 14, color:brown1, fontWeight: FontWeight.w600,);
-TextStyle TabT=TextStyle( fontFamily: 'Roboto', fontSize: 14, color: Color.fromRGBO(52, 52, 52, 1), fontWeight: FontWeight.w500);
+TextStyle cancelbutton=TextStyle( fontFamily: 'Roboto', fontSize: 14, color: Color.fromRGBO(52, 52, 52, 1), fontWeight: FontWeight.w500);
 //CATEGORY TAB
 TextStyle cardDetailT=TextStyle( fontFamily: 'Inter', fontSize: 16, color:Black, fontWeight: FontWeight.w500);
 TextStyle rejectionT=TextStyle( fontFamily: 'Inter', fontSize: 18, color:Black, fontWeight: FontWeight.w500);

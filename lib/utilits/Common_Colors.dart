@@ -4,6 +4,14 @@ import 'package:flutter/material.dart';
 const Color white1=Color.fromRGBO(102, 102, 102, 1);
 const Color white2=Color.fromRGBO(255, 255, 255, 1);
 
+const Color expidate=Color.fromRGBO(217, 217, 217, 0.56);
+
+const Color coupon_Pop=Color.fromRGBO(181, 181, 181, 1);
+const Color coupon_Pop2=Color.fromRGBO(6, 6, 6, 1);
+//COUPON
+const Color blue=Color.fromRGBO(45, 99, 239, 1);
+const Color container=Color.fromRGBO(62, 62, 62, 1);
+
 //BUTTON TEXT COLOR
 const Color ButtonClr=Color.fromRGBO(14, 14, 14, 1);
 
@@ -16,6 +24,7 @@ const Color background=Color.fromRGBO(14, 14, 14, 1);
 
 //RATING COLOR
 const Color loaderclr=Color.fromRGBO(255, 215, 0, 1);
+const Color yellow=Color.fromRGBO(255, 215, 0, 0.49);
 
 //GRADIENT
 const Color gradient1=Color.fromRGBO(34, 155, 82, 1);
@@ -23,6 +32,9 @@ const Color gradient2=Color.fromRGBO(153, 153, 153, 1);
 
 //TEXT FORM FIELD COLOR
 const Color Field_Color=Color.fromRGBO(102, 102, 102, 0.54);
+
+//TIME CONTAINER
+const Color time=Color.fromRGBO(228, 228, 231, 1);
 
 //Black
 const Color Black=Color.fromRGBO(0, 0, 0, 1);
