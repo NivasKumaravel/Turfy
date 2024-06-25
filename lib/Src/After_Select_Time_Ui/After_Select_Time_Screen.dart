@@ -29,7 +29,9 @@ class _After_Select_Time_ScreenState extends State<After_Select_Time_Screen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Text('Hindusthan turf',style: largetext,),
+              Container(
+                  width: MediaQuery.sizeOf(context).width/1.1,
+                  child: Text('Hindusthan turf',style: largetext,)),
               Container(
                 width: MediaQuery.sizeOf(context).width/1.3,
                 child: Text('Hindusthan gardens, Nava India Rd, Coimbatore, Tamil Nadu 64102',

@@ -6,6 +6,7 @@ import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
 import 'package:turfy/Common_Widgets/Text_Form_Field.dart';
 import 'package:turfy/Src/Forgot_Password_Ui/Forgot_Password_Screen.dart';
+import 'package:turfy/Src/Home_Page_Ui/Home_Page_Screen.dart';
 import 'package:turfy/Src/Sign_Up_Ui/Sign_Up_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
@@ -121,7 +122,7 @@ class _Sign_In_ScreenState extends State<Sign_In_Screen> {
             CommonContainerButton(context, "Signin", () {
               if(_formKey.currentState!.validate())
               {
-                //Navigator.push(context, MaterialPageRoute(builder: (context)=>Faq_Screen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Page_Screen()));
               }
             }),
 

@@ -63,7 +63,7 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
   Widget _mainbody (){
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.only(top: 10,bottom: 20),
+        padding: const EdgeInsets.only(top: 10,bottom: 50),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,

@@ -31,12 +31,12 @@ class _CustomAppBarState extends State<Custom_AppBar> {
             statusBarIconBrightness: Brightness.dark // Status bar
         ),
 
-        leading: widget.isNav==true?InkWell(
-          onTap: ()=>Navigator.pop(context),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15,top: 20),
-              child: ImgPathSvg('back.svg'),
-            )):null,
+        leading: widget.isNav==true?Padding(
+          padding: const EdgeInsets.only(left: 20),
+          child: InkWell(
+              onTap: ()=>Navigator.pop(context),
+              child: ImgPathSvg('back.svg')),
+        ):null,
       );
   }
 }

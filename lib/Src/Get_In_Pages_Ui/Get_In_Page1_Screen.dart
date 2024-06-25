@@ -34,62 +34,64 @@ class _Get_In_Page1State extends State<Get_In_Page1> {
 
   Widget _Mainbody (){
     return
-    SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
-        child: Column(
-          children: [
-            Stack(
-              children: [
-
-                //IMAGE
-                ImgPathPng('page1.png'),
-                Positioned(
-                    right: 20,
-                    top: 30,
-
-                    //SKIP
-                    child: InkWell(
-                        onTap: (){
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_In_Screen()));
-                        },
-                        child: ImgPathSvg('skip.svg'))),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20,right: 20),
-              child: Column(
+    SafeArea(
+      child: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(bottom: 30),
+          child: Column(
+            children: [
+              Stack(
                 children: [
-                  ShaderMask(
-                      shaderCallback: (Rect rect) {
-                        return _gradient.createShader(rect);
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 20,bottom: 20),
-                        child: Text('Discover the closest turf near you  and kickstart your game today.',
-                          style: cardT.copyWith(color: Colors.white),
-                          textAlign: TextAlign.center,),
-                      )),
-                  Text('Discover nearby turfs for your next game. With convenience at your fingertips, finding the perfect pitch has never been easier. Step onto the field and let the competition ignite your passion for play.',
-                      textAlign: TextAlign.center,
-                      style: About
-                  ),
-
-                  //PAGE INDICATOR
-                  Padding(
-                    padding: const EdgeInsets.only(top: 25,bottom: 15),
-                    child: ImgPathSvg('page1indicator.svg'),
-                  ),
-
-                  //BUTTON
-                  const SizedBox(height: 100,),
-                  CommonContainerButton(context, "Next", () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Get_In_Page2()));
-                  }),
+      
+                  //IMAGE
+                  ImgPathPng('page1.png'),
+                  Positioned(
+                      right: 20,
+                      top: 30,
+      
+                      //SKIP
+                      child: InkWell(
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_In_Screen()));
+                          },
+                          child: ImgPathSvg('skip.svg'))),
                 ],
               ),
-            )
-          ],
+              Padding(
+                padding: const EdgeInsets.only(left: 20,right: 20),
+                child: Column(
+                  children: [
+                    ShaderMask(
+                        shaderCallback: (Rect rect) {
+                          return _gradient.createShader(rect);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 20,bottom: 20),
+                          child: Text('Discover the closest turf near you  and kickstart your game today.',
+                            style: cardT.copyWith(color: Colors.white),
+                            textAlign: TextAlign.center,),
+                        )),
+                    Text('Discover nearby turfs for your next game. With convenience at your fingertips, finding the perfect pitch has never been easier. Step onto the field and let the competition ignite your passion for play.',
+                        textAlign: TextAlign.center,
+                        style: About
+                    ),
+      
+                    //PAGE INDICATOR
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25,bottom: 15),
+                      child: ImgPathSvg('page1indicator.svg'),
+                    ),
+      
+                    //BUTTON
+                    const SizedBox(height: 100,),
+                    CommonContainerButton(context, "Next", () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Get_In_Page2()));
+                    }),
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

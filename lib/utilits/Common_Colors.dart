@@ -15,6 +15,10 @@ const Color container=Color.fromRGBO(62, 62, 62, 1);
 //BUTTON TEXT COLOR
 const Color ButtonClr=Color.fromRGBO(14, 14, 14, 1);
 
+const Color profile=Color.fromRGBO(84, 84, 84, 1);
+
+const Color red=Color.fromRGBO(239, 45, 45, 1);
+
 const Color Sbutton=Color.fromRGBO(34, 202, 102, 1);
 
 const Color location=Color.fromRGBO(178, 186, 198, 1);

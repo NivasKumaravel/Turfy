@@ -62,6 +62,9 @@ dependencies:
   flutter_pdfview:
   open_file:
   searchfield:
+  percent_indicator: ^4.2.3
+  smooth_star_rating_null_safety: ^1.0.4+2
+  r_dotted_line_border: ^0.1.1
 
 dev_dependencies:
   flutter_test:
