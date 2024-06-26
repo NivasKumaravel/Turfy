@@ -61,8 +61,8 @@ class _Payment_Sucess_ScreenState extends State<Payment_Sucess_Screen> {
               padding: const EdgeInsets.only(top: 25,bottom: 10),
               child: Text('Payment Summary',style: paymentsummary,),
             ),
-            RText(text1: 'Date', text2: '25 Jan, 2022', style: Rtext),
-            RText(text1: 'Time', text2: '02:00 PM to 03.00 PM', style: Rtext),
+            RText(context,text1: 'Date', text2: '25 Jan, 2022', style: Rtext),
+            RText(context,text1: 'Time', text2: '02:00 PM to 03.00 PM', style: Rtext),
 
             Row(
               children: [

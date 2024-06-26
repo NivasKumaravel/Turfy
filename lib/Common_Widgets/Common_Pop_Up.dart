@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:r_dotted_line_border/r_dotted_line_border.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
+import 'package:turfy/Src/Apply_Coupon_Ui/Apply_Coupon_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 
@@ -12,8 +13,8 @@ Future PopUp (context,{required String text}){
             borderRadius: BorderRadius.circular(15)
         ),
         child: Container(
-          height: MediaQuery.sizeOf(context).height/2.5,
-          width: MediaQuery.sizeOf(context).width/2,
+          height: MediaQuery.sizeOf(context).height/2.8,
+          width: MediaQuery.sizeOf(context).width/1.4,
           decoration: BoxDecoration(
               color: coupon_Pop,
               borderRadius: BorderRadius.circular(15)
@@ -51,7 +52,7 @@ Future PopUp (context,{required String text}){
                 ),
 
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     //BUTTON
                     cancel(context, "Cancel", (){}),

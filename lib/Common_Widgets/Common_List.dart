@@ -49,12 +49,14 @@ Widget Coupons (){
     ),
   );
 }
-Widget Turf_list (context,{required String image,required String text}){
+Widget Turf_list (context,{required void Function()? onTap ,required String image,required String text}){
   return Padding(
       padding: const EdgeInsets.only(right: 10,left: 10),
       child: Stack(
         children: [
-          ImgPathPng(image),
+          InkWell(
+            onTap: onTap,
+              child: ImgPathPng(image)),
           Positioned(
               bottom: 10,left: 10,
               child: Container(

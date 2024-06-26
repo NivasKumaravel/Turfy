@@ -16,7 +16,7 @@ class _My_Notification_SceenState extends State<My_Notification_Sceen> {
     return Scaffold(
       backgroundColor: background,
       body: Padding(
-        padding: const EdgeInsets.only(left: 20,right: 20,top: 30,),
+        padding: const EdgeInsets.only(left: 20,right: 20,top: 50,),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

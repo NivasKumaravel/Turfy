@@ -1,4 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
@@ -19,6 +23,9 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
   RegExp passwordLength = RegExp(r'^(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$])(?=.*[0-9]).{8,15}$');
   RegExp onlyText = RegExp(r'^[a-zA-Z ]+$');
 
+  File? _image;
+  String ProfileImg = "";
+
   bool _obscurePassword = true;
   //PASSWORD VISIBILITY FUNCTION
   void _togglePasswordVisibility() {
@@ -26,6 +33,7 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
       _obscurePassword = !_obscurePassword;
     });
   }
+
 
   final _formKey = GlobalKey<FormState>();
 
@@ -57,6 +65,10 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
             //HEADING TEXTS
             Center(child: richfont(Wtext: 'Sign Up', Gtext: ' Now')),
             Center(child: rich(text: 'Please fill the details and book the slots')),
+
+            Center(child: profile_Picker()),
+
+            const SizedBox(height: 50),
 
             //NAME
             Padding(
@@ -127,7 +139,7 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
 
             Text('Password must be 8 character',style: GreenT,),
 
-            const SizedBox(height: 150,),
+            const SizedBox(height: 100,),
 
             //BUTTON
             CommonContainerButton(context, "Signup", (){
@@ -175,4 +187,76 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
       ),
     );
   }
+
+
+  Widget profile_Picker(){
+    return
+      Padding(
+        padding: const EdgeInsets.only(bottom: 5),
+        child: Column(
+          children: [
+            Stack(
+              children: [
+                InkWell(
+                  onTap: _showImagePickerBottomSheet,
+                  child: ImgPathPng('profileimage2.png')
+                ),
+                Positioned(
+                    bottom: 0,
+                    right: 0,
+                    child: ImgPathSvg("editprofile.svg")),
+              ],
+            ),
+          ],
+        ),
+      );
+  }
+
+  Future<void> _pickImage(ImageSource source) async {
+    final picker = ImagePicker();
+    final pickedFile = await picker.pickImage(source: source);
+
+    if (pickedFile != null) {
+      setState(() {
+        _image = File(pickedFile.path);
+      });
+    }
+    Navigator.pop(context); // Close the bottom sheet after selecting an image
+  }
+
+  void _showImagePickerBottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.camera),
+                title: Text('Take Photo'),
+                onTap: () {
+                  setState(() {
+                    _pickImage(ImageSource.camera);
+                  });
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.photo),
+                title: Text('Choose from Gallery'),
+                onTap: () {
+                  setState(() {
+                    _pickImage(ImageSource.gallery);
+                  });
+                },
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 }
+
+
+

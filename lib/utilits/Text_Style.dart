@@ -52,8 +52,15 @@ TextStyle ButtonT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: ButtonC
 TextStyle lighttext=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: white1, fontWeight: FontWeight.w500);
 TextStyle profileT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: white2, fontWeight: FontWeight.w500);
 TextStyle ListT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: white2, fontWeight: FontWeight.w500);
-TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);TextStyle TitleT=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);TextStyle inboxcompany=TextStyle( fontFamily: 'Inter', fontSize: 18, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);TextStyle TBlack=TextStyle( fontFamily: 'Inter', fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);TextStyle noDataT1=TextStyle( fontFamily: 'Inter', fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600);TextStyle appLoginT=TextStyle( fontFamily: 'Inter', fontSize: 22, color: black4, fontWeight: FontWeight.w500);TextStyle signUpT=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);TextStyle richtext1=TextStyle( fontFamily: 'Inter', fontSize: 12, color: grey1, fontWeight: FontWeight.w500);TextStyle richtext2=TextStyle( fontFamily: 'Inter', fontSize: 12, color: brown1, fontWeight: FontWeight.w700);
+TextStyle logintxt=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
+TextStyle TitleT=TextStyle( fontFamily: 'Inter', fontSize: 24, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w700);
+TextStyle inboxcompany=TextStyle( fontFamily: 'Inter', fontSize: 18, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w500);
+TextStyle TBlack=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w400);TextStyle noDataT1=TextStyle( fontFamily: 'Inter', fontSize: 22, color: Colors.black, fontWeight: FontWeight.w600);TextStyle appLoginT=TextStyle( fontFamily: 'Inter', fontSize: 22, color: black4, fontWeight: FontWeight.w500);
 TextStyle PaymentT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: white2, fontWeight: FontWeight.w700);
+
+TextStyle CopyT=TextStyle( fontFamily: 'Poppins', fontSize: 14, color: Color.fromRGBO(0, 0, 0, 1), fontWeight: FontWeight.w400);
+
+TextStyle logout=TextStyle( fontFamily: 'Poppins', fontSize: 21, color: Color.fromRGBO(18, 18, 18, 1), fontWeight: FontWeight.w600);
 
 TextStyle Descripton_headT=TextStyle( fontFamily: 'Poppins', fontSize: 20, color: gradient1, fontWeight: FontWeight.w500);
 TextStyle Descripton_locationT=TextStyle( fontFamily: 'Poppins', fontSize: 13, color: white2, fontWeight: FontWeight.w700);
@@ -78,6 +85,9 @@ TextStyle RedT=TextStyle( fontFamily: 'Poppins', fontSize: 18, color: Color.from
 TextStyle RedT2=TextStyle( fontFamily: 'Poppins', fontSize: 12, color: Color.fromRGBO(239, 45, 45, 1), fontWeight: FontWeight.w700);
 
 TextStyle notificationdatetime=TextStyle( fontFamily: 'Poppins', fontSize: 12, color:green1, fontWeight: FontWeight.w500);
+
+
+TextStyle referT=TextStyle( fontFamily: 'Poppins', fontSize: 12, color: refer, fontWeight: FontWeight.w400);
 
 //NOTIFICATION
 //LOCATION

@@ -3,12 +3,17 @@ import 'package:flutter/material.dart';
 // DESCRIPTION COLOR
 const Color white1=Color.fromRGBO(102, 102, 102, 1);
 const Color white2=Color.fromRGBO(255, 255, 255, 1);
+const Color red=Color.fromRGBO(255, 111, 97, 11);
+
+const Color earn=Color.fromRGBO(255, 212, 58, 1);
 
 const Color expidate=Color.fromRGBO(217, 217, 217, 0.56);
 
 const Color coupon_Pop=Color.fromRGBO(181, 181, 181, 1);
 const Color coupon_Pop2=Color.fromRGBO(6, 6, 6, 1);
 //COUPON
+const Color refer=Color.fromRGBO(160, 160, 160, 1);
+
 const Color blue=Color.fromRGBO(45, 99, 239, 1);
 const Color container=Color.fromRGBO(62, 62, 62, 1);
 
@@ -17,7 +22,7 @@ const Color ButtonClr=Color.fromRGBO(14, 14, 14, 1);
 
 const Color profile=Color.fromRGBO(84, 84, 84, 1);
 
-const Color red=Color.fromRGBO(239, 45, 45, 1);
+const Color red1=Color.fromRGBO(239, 45, 45, 1);
 
 const Color Sbutton=Color.fromRGBO(34, 202, 102, 1);
 
@@ -75,7 +80,7 @@ const Color green7=Color.fromRGBO(59, 168, 89, 1);
 
 
 //BROWN
-const Color brown1=Color.fromRGBO(64, 13, 10, 1);
+const Color brown1=Color.fromRGBO(151, 151, 151, 1);
 
 
 

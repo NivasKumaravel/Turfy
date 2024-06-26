@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
+import 'package:turfy/Src/Apply_Coupon_Ui/Apply_Coupon_Screen.dart';
+import 'package:turfy/Src/Payment_Ui/Payment_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 class After_Select_Time_Screen extends StatefulWidget {
@@ -47,52 +49,46 @@ class _After_Select_Time_ScreenState extends State<After_Select_Time_Screen> {
                 child: Text('Payment Summary',style: paymentsummary,),
               ),
               
-              RText(text1: 'Date', text2: '25 Jan, 2022', style: Rtext),
-              RText(text1: 'Time', text2: '02:00 PM to 03.00 PM', style: Rtext),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 15),
-                child: Row(
-                  children: [
-                    Text('Pay Full Amount',style: Rtext,),
-                    const Spacer(),
-                    Icon(Icons.currency_rupee,color: white2,size: 18,),
-                    Text('1200',style: Rtext,),
+              RText(context,text1: 'Date', text2: '25 Jan, 2022', style: Rtext),
+              RText(context,text1: 'Time', text2: '02:00 PM to 03.00 PM', style: Rtext),
+              Row(
+                children: [
+                  Text('Pay Full Amount',style: Rtext,),
+                  const Spacer(),
+                  Icon(Icons.currency_rupee,color: white2,size: 18,),
+                  Text('1200',style: Rtext,),
 
-                    Checkbox(
-                      activeColor: white2,
-                        checkColor: green1,
-                        value: isChecked,
-                        onChanged:(bool ? value ) {
-                            setState(() {
-                              isChecked = value!;
-                            });
-                        }
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 15),
-                child: Row(
-                  children: [
-                    Text('Pay Advance Only',style: Rtext,),
-                    const Spacer(),
-                    Icon(Icons.currency_rupee,color: white2,size: 18,),
-                    Text('200',style: Rtext,),
-                    Checkbox(
-                        activeColor: white2,
-                        checkColor: green1,
-                        value: isChecked1,
-                        onChanged:(bool ? value ) {
+                  Checkbox(
+                    activeColor: white2,
+                      checkColor: green1,
+                      value: isChecked,
+                      onChanged:(bool ? value ) {
                           setState(() {
-                            isChecked1 = value!;
+                            isChecked = value!;
                           });
-                        }
-                    ),
-                  ],
-                ),
+                      }
+                  ),
+                ],
               ),
-              RText(text1: 'Coupon', text2: 'Apply Coupon', style: BText),
+              Row(
+                children: [
+                  Text('Pay Advance Only',style: Rtext,),
+                  const Spacer(),
+                  Icon(Icons.currency_rupee,color: white2,size: 18,),
+                  Text('200',style: Rtext,),
+                  Checkbox(
+                      activeColor: white2,
+                      checkColor: green1,
+                      value: isChecked1,
+                      onChanged:(bool ? value ) {
+                        setState(() {
+                          isChecked1 = value!;
+                        });
+                      }
+                  ),
+                ],
+              ),
+              RText(context,text1: 'Coupon', text2: 'Apply Coupon', style: BText),
               Padding(
                 padding: const EdgeInsets.only(bottom: 15),
                 child: Row(
@@ -116,12 +112,12 @@ class _After_Select_Time_ScreenState extends State<After_Select_Time_Screen> {
                 ),
               ),
 
-              const SizedBox(height: 100,),
+              const SizedBox(height: 30,),
 
               //BUTTON
               CommonContainerButton(context, "Pay Now", (){
                 {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_DashBoard_Screen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Screen()));
                 }
               }),
             ],
@@ -132,14 +128,18 @@ class _After_Select_Time_ScreenState extends State<After_Select_Time_Screen> {
   }
 }
 
-Widget RText ({required String text1,required String text2,required TextStyle? style}){
+Widget RText (context,{required String text1,required String text2,required TextStyle? style}){
   return Padding(
     padding: const EdgeInsets.only(bottom: 15),
     child: Row(
       children: [
         Text(text1,style: Rtext,),
         const Spacer(),
-        Text(text2,style: style,)
+        InkWell(
+          onTap: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>Apply_Coupon_Screen()));
+          },
+            child: Text(text2,style: style,))
       ],
     ),
   );

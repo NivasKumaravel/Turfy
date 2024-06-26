@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>This app require access for Photo Library Usage</string>
+    <key>NSCameraUsageDescription</key>
+    <string>This app require access to the camera.</string>
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>We need access to your files to select documents.</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>This app needs access your location to get address.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This app needs access your location to get address.</string>
+    <key>NSLocationAlwaysAndWhenInUsageDescription</key>
+    <string>This app needs access your location to get address.</string>
+
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

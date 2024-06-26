@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:turfy/Src/Home_Page_Ui/Home_Page_Screen.dart';
+import 'package:turfy/Src/My_Booking_Ui/My_Booking_Screen.dart';
+import 'package:turfy/Src/My_Notification_Ui/My_Notification_Sceen.dart';
+import 'package:turfy/Src/Profile_Ui/Edit_Profile_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 
 
@@ -7,8 +11,8 @@ import 'Image_Path.dart';
 
 class Bottom_Navigation extends StatefulWidget {
   int select;
-  final int initialTabIndex;
-   Bottom_Navigation({Key? key,required this.select, required this.initialTabIndex}) : super(key: key);
+
+   Bottom_Navigation({Key? key,required this.select}) : super(key: key);
 
   @override
   State<Bottom_Navigation> createState() => _Bottom_NavigationState();
@@ -23,6 +27,10 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
    }
   void initializePages() {
     pages = [
+      Home_Page_Screen(),
+      My_Booking_Screen(),
+      My_Notification_Sceen(),
+      My_Profile_Screen()
     ];
   }
 
@@ -40,32 +48,29 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
         child: pages?[widget.select],
       ),
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: white1,
-        selectedItemColor: brown1,
-        selectedLabelStyle: TextStyle(color: brown1),
+        unselectedItemColor: brown1,
+        backgroundColor: background,
+        selectedItemColor: green1,
+        selectedLabelStyle: TextStyle(color: green1),
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: _IconImg("Home.svg"),
-            activeIcon: _IconImg("Homeactive.svg"),
+            icon: _IconImg("homeinactive2.svg"),
+            activeIcon: _IconImg("homeactive.svg"),
             label: "Home",
           ),
           BottomNavigationBarItem(
-              activeIcon: _IconImg("Ticketactive.svg"),
-              icon: _IconImg("Ticket.svg"),
+              activeIcon: _IconImg("mybookingactive.svg"),
+              icon: _IconImg("mybookinginactive.svg"),
               label: "My Bookings"),
           BottomNavigationBarItem(
-              activeIcon: _IconImg("inboxactive.svg"),
-              icon: _IconImg("inbox.svg"),
-              label: "Inbox"),
+              activeIcon: _IconImg("notiactive.svg"),
+              icon: _IconImg("notiinactive.svg"),
+              label: "Notification"),
           BottomNavigationBarItem(
-              activeIcon: _IconImg("Profileactive.svg"),
-              icon: _IconImg("Profile.svg"),
-              label: "Profile"),
-          // BottomNavigationBarItem(
-          //     activeIcon: _IconImg("package2.svg"),
-          //     icon: _IconImg("package1.svg"),
-          //     label: "Products"),
+              activeIcon: _IconImg("profileactive.svg"),
+              icon: _IconImg("profileinactive.svg"),
+              label: "Profile",),
         ],
         currentIndex: widget.select,
         onTap: b,

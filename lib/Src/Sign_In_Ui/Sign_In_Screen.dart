@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:turfy/Common_Widgets/Bottom_Navigation_Bar.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
@@ -122,7 +123,7 @@ class _Sign_In_ScreenState extends State<Sign_In_Screen> {
             CommonContainerButton(context, "Signin", () {
               if(_formKey.currentState!.validate())
               {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Page_Screen()));
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottom_Navigation(select: 0)));
               }
             }),
 
@@ -140,7 +141,7 @@ class _Sign_In_ScreenState extends State<Sign_In_Screen> {
                         },
                         child: InkWell(
                             onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Forgot_Password_Screen()));
+                              Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_Up_Screen()));
                             },
                             child: Text('Sign Up',style: Forget_password,))),
                   ),

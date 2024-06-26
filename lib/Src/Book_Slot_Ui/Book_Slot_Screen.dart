@@ -5,6 +5,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
+import 'package:turfy/Src/After_Select_Time_Ui/After_Select_Time_Screen.dart';
 import 'package:turfy/Src/Home_Page_Ui/Home_Page_Screen.dart';
 import 'package:turfy/Src/Turf_Description_Ui/Turf_Description_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
@@ -50,7 +51,11 @@ class _Book_Slot_ScreenState extends State<Book_Slot_Screen> {
                       ),
                   Positioned(
                       left: 20,top: 20,
-                      child: ImgPathSvg('back.svg')),
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                          child: ImgPathSvg('back.svg'))),
                   Positioned(
                     bottom: 55,left: 20,
                       child: Container(
@@ -178,7 +183,7 @@ class _Book_Slot_ScreenState extends State<Book_Slot_Screen> {
                       padding: const EdgeInsets.only(top: 20),
                       child: CommonContainerButton(context, "Book a Slot", (){
                         {
-                          // Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_DashBoard_Screen()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>After_Select_Time_Screen()));
                         }
                       }),
                     ),

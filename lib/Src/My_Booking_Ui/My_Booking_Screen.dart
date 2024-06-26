@@ -21,7 +21,7 @@ class _My_Booking_ScreenState extends State<My_Booking_Screen> {
 
   Widget _Mainbody (){
     return Padding(
-      padding: const EdgeInsets.only(left: 20,right: 20,top: 30,bottom: 50),
+      padding: const EdgeInsets.only(left: 20,right: 20,top: 50,bottom: 50,),
       child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

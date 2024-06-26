@@ -8,6 +8,9 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:turfy/Common_Widgets/Common_List.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
 import 'package:turfy/Common_Widgets/Text_Form_Field.dart';
+import 'package:turfy/Src/Profile_Ui/Edit_Profile_Screen.dart';
+import 'package:turfy/Src/Profile_Ui/Profile_Screen.dart';
+import 'package:turfy/Src/Turf_Description_Ui/Turf_Description_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 class Home_Page_Screen extends StatefulWidget {
@@ -25,6 +28,7 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: background,
         title: Column(
           children: [
@@ -49,7 +53,11 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
                 const Spacer(),
 
                 //PROFILE IMAGE
-                ImgPathPng('profile.png')
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Profile_Screen()));
+                  },
+                    child: ImgPathPng('profile.png'))
               ],
             ),
           ],
@@ -123,7 +131,9 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index){
-                    return Turf_list(context, image: 'ground.png', text: 'Hindustan turf');
+                    return Turf_list(context, image: 'ground.png', text: 'Hindustan turf', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Turf_Description_Screen()));
+                    });
                   }
               ),
             ),
@@ -136,7 +146,7 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index){
-                    return Turf_list(context, image: 'ground2.png', text: 'One more Game');
+                    return Turf_list(context, image: 'ground2.png', text: 'One more Game', onTap: () {  });
                   }
               ),
             ),
@@ -149,7 +159,7 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index){
-                    return Turf_list(context, image: 'ground3.png', text: 'Hindustan turf');
+                    return Turf_list(context, image: 'ground3.png', text: 'Hindustan turf', onTap: () {  });
                   }
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
+import 'package:turfy/Src/Apply_Coupon_Ui/Apply_Coupon_Screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../utilits/Common_Colors.dart';
 import '../utilits/Text_Style.dart';
@@ -25,6 +26,54 @@ Widget CommonContainerButton(
     ),
   );
 }
+
+// ELEVATED BUTTON Red
+Widget Yes(
+    BuildContext context,
+    String titleName,
+    void Function()? onPress,
+    ){
+  return Container(
+    width: MediaQuery.sizeOf(context).width/1.8,
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: red,
+        minimumSize: Size(double.infinity, 50),
+        elevation: 9,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+      onPressed: onPress,
+      child: Text(
+        titleName,
+        style: ButtonT,
+      ),
+    ),
+  );
+}
+
+Widget No(
+    BuildContext context,
+    String titleName,
+    void Function()? onPress,
+    ){
+  return Container(
+    width: MediaQuery.sizeOf(context).width/1.8,
+    child: ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: green1,
+        minimumSize: Size(double.infinity, 50),
+        elevation: 9,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+      ),
+      onPressed: onPress,
+      child: Text(
+        titleName,
+        style: ButtonT,
+      ),
+    ),
+  );
+}
+
 
 // ELEVATED BUTTON
 Widget CommonContainerButton2(
@@ -143,21 +192,26 @@ Widget cancel(
 
     void Function()? onPress,
     ){
-  return Container(
-    width: MediaQuery.sizeOf(context).width/3.5,
-    child: ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: white2,
-        minimumSize: Size(double.infinity, 50),
-        elevation: 9,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-      ),
-      onPressed: onPress,
-      child: Center(
-        child: Text(
-          titleName,
-          style: cancelbutton,
-          textAlign: TextAlign.center,
+  return InkWell(
+    onTap: (){
+      Navigator.pop(context);
+    },
+    child: Container(
+      width: MediaQuery.sizeOf(context).width/3.6,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: white2,
+          minimumSize: Size(double.infinity, 50),
+          elevation: 9,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        ),
+        onPressed: onPress,
+        child: Center(
+          child: Text(
+            titleName,
+            style: cancelbutton,
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     ),
@@ -171,7 +225,7 @@ Widget apply(
     void Function()? onPress,
     ){
   return Container(
-    width: MediaQuery.sizeOf(context).width/3.5,
+    width: MediaQuery.sizeOf(context).width/3.6,
     child: ElevatedButton(
       style: ElevatedButton.styleFrom(
         backgroundColor: gradient1,

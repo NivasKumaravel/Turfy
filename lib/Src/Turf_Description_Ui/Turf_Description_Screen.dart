@@ -8,6 +8,8 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:smooth_star_rating_null_safety/smooth_star_rating_null_safety.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
+import 'package:turfy/Src/Book_Slot_Ui/Book_Slot_Screen.dart';
+import 'package:turfy/Src/Home_Page_Ui/Home_Page_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 class Turf_Description_Screen extends StatefulWidget {
@@ -40,26 +42,43 @@ class _Turf_Description_ScreenState extends State<Turf_Description_Screen> {
       
             //CAROUSELSLIDER
             Container(
-              child: CarouselSlider(
-                  items: [
-                    _carouselImg(context,),
-                    _carouselImg(context,),
-                    _carouselImg(context,),
-                    _carouselImg(context,),
-                  ],
-                  options: CarouselOptions(
-                    height: MediaQuery.sizeOf(context).height/2.5,
-                    autoPlay: true,
-                    viewportFraction: 1,
-                    enlargeCenterPage: true,
-                    aspectRatio: 16/9,
-                    autoPlayAnimationDuration:Duration(milliseconds: 500),
-                    onPageChanged: (index,reason){
-                      setState(() {
-                        myCurrentPage = index;
-                      });
-                    },
-                  )
+              child: Stack(
+                children: [
+                  CarouselSlider(
+                      items: [
+                        _carouselImg(context,),
+                        _carouselImg(context,),
+                        _carouselImg(context,),
+                        _carouselImg(context,),
+                      ],
+                      options: CarouselOptions(
+                        height: MediaQuery.sizeOf(context).height/2.5,
+                        autoPlay: true,
+                        viewportFraction: 1,
+                        enlargeCenterPage: true,
+                        aspectRatio: 16/9,
+                        autoPlayAnimationDuration:Duration(milliseconds: 500),
+                        onPageChanged: (index,reason){
+                          setState(() {
+                            myCurrentPage = index;
+                          });
+                        },
+                      )
+                  ),
+                  Positioned(
+                      top: 15,left: 15,
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.pop(context);
+                        },
+                          child: ImgPathSvg('back.svg'))),
+                  Positioned(
+                      right: 15,top: 15,
+                      child: ImgPathSvg('fav.svg')),
+                  Positioned(
+                      right: 65,top: 15,
+                      child: ImgPathSvg('share.svg')),
+                ],
               ),
             ),
             //INDICATOR
@@ -210,7 +229,7 @@ class _Turf_Description_ScreenState extends State<Turf_Description_Screen> {
                   //BUTTON
                   CommonContainerButton(context, "Book a Slot", (){
                     {
-                      // Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_DashBoard_Screen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Book_Slot_Screen()));
                     }
                   }),
                 ],
@@ -228,24 +247,7 @@ Widget _carouselImg (context){
   return Container(
     height: MediaQuery.sizeOf(context).height/2,
     //width: MediaQuery.sizeOf(context).width,
-    child: Stack(
-      children: [
-        ImgPathPng('slider2.png'),
-        Positioned(
-          top: 15,left: 15,
-            child: ImgPathSvg('back.svg')),
-        Positioned(
-            top: 15,left: 15,
-            child: ImgPathSvg('back.svg')),
-        Positioned(
-          right: 15,top: 15,
-            child: ImgPathSvg('fav.svg')),
-        Positioned(
-          right: 65,top: 15,
-            child: ImgPathSvg('share.svg')),
-      ],
-
-    ),
+    child: ImgPathPng('slider2.png'),
   );
 }
 
