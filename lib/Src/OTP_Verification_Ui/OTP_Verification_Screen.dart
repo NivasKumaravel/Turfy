@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
+import 'package:turfy/Common_Widgets/Bottom_Navigation_Bar.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Src/Get_In_Pages_Ui/Get_In_Page1_Screen.dart';
@@ -62,7 +63,7 @@ class _OTP_Verification_ScreenState extends State<OTP_Verification_Screen> {
             //BUTTON
             CommonContainerButton(context, "OTP Verify", (){
               if(_formKey.currentState!.validate()){
-                //Navigator.push(context, MaterialPageRoute(builder: (context)=>Get_In_Page1()));
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Bottom_Navigation(select: 0,)), (route) => false);
               }
             }),
           ],

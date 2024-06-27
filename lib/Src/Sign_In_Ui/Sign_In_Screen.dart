@@ -113,7 +113,11 @@ class _Sign_In_ScreenState extends State<Sign_In_Screen> {
               mainAxisAlignment: MainAxisAlignment.end,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Forget Password?",style: Forget_password,),
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Forgot_Password_Screen()));
+                  },
+                    child: Text("Forget Password?",style: Forget_password,)),
               ],
             ),
 
@@ -123,7 +127,7 @@ class _Sign_In_ScreenState extends State<Sign_In_Screen> {
             CommonContainerButton(context, "Signin", () {
               if(_formKey.currentState!.validate())
               {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Bottom_Navigation(select: 0)));
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Bottom_Navigation(select: 0,)), (route) => false);
               }
             }),
 

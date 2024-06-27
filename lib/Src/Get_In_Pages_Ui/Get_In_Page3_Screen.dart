@@ -74,7 +74,8 @@ class _Get_In_Page3State extends State<Get_In_Page3> {
 
                   //BUTTON
                   CommonContainerButton(context, "GET STARTED", () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_In_Screen()));
+                    Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Sign_In_Screen()), (route) => false);
+
                   }),
                 ],
               ),

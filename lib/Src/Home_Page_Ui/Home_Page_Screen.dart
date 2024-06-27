@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:geolocator/geolocator.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:turfy/Common_Widgets/Common_List.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
@@ -22,14 +23,28 @@ class Home_Page_Screen extends StatefulWidget {
 
 class _Home_Page_ScreenState extends State<Home_Page_Screen> {
 
+  @override
+  void initState() {
+    _enabled = true;
+    Future.delayed(const Duration(seconds: 1),(){
+      setState(() {
+        _enabled = false;
+      });
+    });
+    // TODO: implement initState
+    super.initState();
+  }
+
+  bool _enabled = true;
+
   int myCurrentPage = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         backgroundColor: background,
+        automaticallyImplyLeading: false,
         title: Column(
           children: [
             Row(
@@ -64,7 +79,12 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
         ),
       ),
       backgroundColor: background,
-      body: _mainbody(),
+      body: Skeletonizer(
+          effect: const ShimmerEffect(
+              baseColor: Colors.white10),
+          enabled: _enabled,
+          enableSwitchAnimation: true,
+          child: _mainbody()),
     );
   }
 
@@ -146,7 +166,9 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index){
-                    return Turf_list(context, image: 'ground2.png', text: 'One more Game', onTap: () {  });
+                    return Turf_list(context, image: 'ground2.png', text: 'One more Game', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Turf_Description_Screen()));
+                    });
                   }
               ),
             ),
@@ -159,7 +181,9 @@ class _Home_Page_ScreenState extends State<Home_Page_Screen> {
                   scrollDirection: Axis.horizontal,
                   itemCount: 10,
                   itemBuilder: (BuildContext context, int index){
-                    return Turf_list(context, image: 'ground3.png', text: 'Hindustan turf', onTap: () {  });
+                    return Turf_list(context, image: 'ground3.png', text: 'Hindustan turf', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Turf_Description_Screen()));
+                    });
                   }
               ),
             ),

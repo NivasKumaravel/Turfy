@@ -3,10 +3,12 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:turfy/Common_Widgets/Bottom_Navigation_Bar.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
 import 'package:turfy/Common_Widgets/Text_Form_Field.dart';
+import 'package:turfy/Src/Home_Page_Ui/Home_Page_Screen.dart';
 import 'package:turfy/Src/Sign_In_Ui/Sign_In_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
@@ -47,7 +49,7 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
       backgroundColor: background,
       appBar: Custom_AppBar(isBlue: null, isNav: true,),
       body: Padding(
-        padding: const EdgeInsets.only(left: 20,right: 20,bottom: 30),
+        padding: const EdgeInsets.only(left: 20,right: 20,bottom: 50),
         child: _Mainbody(),
       ),
     );
@@ -144,7 +146,7 @@ class _Sign_Up_ScreenState extends State<Sign_Up_Screen> {
             //BUTTON
             CommonContainerButton(context, "Signup", (){
               if(_formKey.currentState!.validate()){
-                // Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_DashBoard_Screen()));
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Bottom_Navigation(select: 0,)), (route) => false);
               }
             }),
 

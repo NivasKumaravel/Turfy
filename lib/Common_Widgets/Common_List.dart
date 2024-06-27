@@ -35,7 +35,12 @@ Widget Coupons (){
             ),
             Padding(
               padding: const EdgeInsets.only(top: 20,bottom: 20),
-              child: Text('\$150 off on minimum purchase of \$250',style:CouponT1,),
+              child: Row(
+                children: [
+                  Icon(Icons.currency_rupee,size: 14,color: white2,),
+                  Text('150 off on minimum purchase of 250',style:CouponT1,),
+                ],
+              ),
             ),
             Row(
               children: [

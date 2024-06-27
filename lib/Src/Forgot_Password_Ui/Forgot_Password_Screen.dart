@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Text_Form_Field.dart';
+import 'package:turfy/Src/OTP_Verification_Ui/OTP_Verification_Screen.dart';
 import 'package:turfy/Src/Sign_In_Ui/Sign_In_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 class Forgot_Password_Screen extends StatefulWidget {
@@ -67,7 +68,7 @@ class _Forgot_Password_ScreenState extends State<Forgot_Password_Screen> {
           //BUTTON
           CommonContainerButton(context, "Forget Password", (){
             if(_formKey.currentState!.validate()){
-              // Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_DashBoard_Screen()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>OTP_Verification_Screen()));
             }
           }),
         ],

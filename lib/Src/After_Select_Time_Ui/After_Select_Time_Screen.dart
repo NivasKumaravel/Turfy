@@ -107,7 +107,12 @@ class _After_Select_Time_ScreenState extends State<After_Select_Time_Screen> {
                   children: [
                     Text('Amount Payable',style: Rtext,),
                     const Spacer(),
-                    Text('\$1220',  style: TAmount,)
+                    Row(
+                      children: [
+                        Icon(Icons.currency_rupee,size: 20,color: green1,),
+                        Text('1220',  style: TAmount,),
+                      ],
+                    )
                   ],
                 ),
               ),

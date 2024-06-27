@@ -37,7 +37,7 @@ class _Get_In_Page1State extends State<Get_In_Page1> {
     SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(bottom: 30),
+          padding: const EdgeInsets.only(bottom: 50),
           child: Column(
             children: [
               Stack(
@@ -52,7 +52,7 @@ class _Get_In_Page1State extends State<Get_In_Page1> {
                       //SKIP
                       child: InkWell(
                           onTap: (){
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_In_Screen()));
+                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Sign_In_Screen()), (route) => false);
                           },
                           child: ImgPathSvg('skip.svg'))),
                 ],

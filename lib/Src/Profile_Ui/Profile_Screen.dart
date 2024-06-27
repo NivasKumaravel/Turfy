@@ -139,7 +139,7 @@ class _Profile_ScreenState extends State<Profile_Screen> {
                       //BUTTON
                       Yes(context, "Yes", () {
                         {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Sign_In_Screen()));
+                          Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Sign_In_Screen()), (route) => false);
                         }
                       }),
 

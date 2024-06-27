@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:turfy/Common_Widgets/Bottom_Navigation_Bar.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
@@ -68,7 +69,12 @@ class _Payment_Sucess_ScreenState extends State<Payment_Sucess_Screen> {
               children: [
                 Text('Amount Payable',style: Rtext,),
                 const Spacer(),
-                Text('\$1220',  style: TAmount,)
+                Row(
+                  children: [
+                    Icon(Icons.currency_rupee,size: 20,color: green1,),
+                    Text('1220',  style: TAmount,),
+                  ],
+                )
               ],
             ),
 
@@ -77,7 +83,7 @@ class _Payment_Sucess_ScreenState extends State<Payment_Sucess_Screen> {
             //BUTTON
             CommonContainerButton(context, "Go to Home", (){
               {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=>Home_Page_Screen()));
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => Bottom_Navigation(select: 0,)), (route) => false);
               }
             }),
           ],

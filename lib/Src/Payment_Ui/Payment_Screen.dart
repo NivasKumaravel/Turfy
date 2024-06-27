@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:turfy/Common_Widgets/Custom_App_Bar.dart';
 import 'package:turfy/Common_Widgets/Image_Path.dart';
+import 'package:turfy/Src/Payment_Sucess_Ui/Payment_Sucess_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 class Payment_Screen extends StatefulWidget {
@@ -69,9 +70,13 @@ class _Payment_ScreenState extends State<Payment_Screen> {
                       padding: const EdgeInsets.only(bottom: 10,left: 5),
                       child: Text('UPI',style: Paymentamt,),
                     ),
-                    PaymentContainer(context,image: 'gpay.png', text: 'Google Pay', image2: 'rightarrow.svg'),
+                    PaymentContainer(context,image: 'gpay.png', text: 'Google Pay', image2: 'rightarrow.svg', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Sucess_Screen()));
+                    }),
                     const SizedBox(height: 10,),
-                    PaymentContainer(context,image: 'phonepay.png', text: 'Phonepe', image2: 'rightarrow.svg'),
+                    PaymentContainer(context,image: 'phonepay.png', text: 'Phonepe', image2: 'rightarrow.svg', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Sucess_Screen()));
+                    }),
                   ],
                 ),
               ),
@@ -97,9 +102,13 @@ class _Payment_ScreenState extends State<Payment_Screen> {
                       padding: const EdgeInsets.only(bottom: 10,left: 5),
                       child: Text('Card Payment',style: Paymentamt,),
                     ),
-                    PaymentContainer(context,image: 'card.png', text: 'Add Credit / Debit Card', image2: ''),
+                    PaymentContainer(context,image: 'card.png', text: 'Add Credit / Debit Card', image2: '', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Sucess_Screen()));
+                    }),
                     const SizedBox(height: 10,),
-                    PaymentContainer(context,image: 'phonepay.png', text: 'HDFC Card', image2: 'rightarrow.svg'),
+                    PaymentContainer(context,image: 'phonepay.png', text: 'HDFC Card', image2: 'rightarrow.svg', onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>Payment_Sucess_Screen()));
+                    }),
                   ],
                 ),
               ),
@@ -111,27 +120,34 @@ class _Payment_ScreenState extends State<Payment_Screen> {
   }
 }
 
-Widget PaymentContainer (context,{required String image,required String text,required String image2}){
-  return Container(
-    width: MediaQuery.sizeOf(context).width,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-      color: grey4,
-    ),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          ImgPathPng(image),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Text(text,style: paymentT2,),
-          ),
-          const Spacer(),
-          ImgPathSvg(image2)
-        ],
+Widget PaymentContainer (context,{required String image,
+  required String text,
+  required String image2,
+  required void Function()? onTap
+}){
+  return InkWell(
+  onTap: onTap,
+    child: Container(
+      width: MediaQuery.sizeOf(context).width,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: grey4,
+      ),
+      child: Padding(
+        padding: const EdgeInsets.only(left: 20,right: 20,top: 10,bottom: 10),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            ImgPathPng(image),
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Text(text,style: paymentT2,),
+            ),
+            const Spacer(),
+            ImgPathSvg(image2)
+          ],
+        ),
       ),
     ),
   );
