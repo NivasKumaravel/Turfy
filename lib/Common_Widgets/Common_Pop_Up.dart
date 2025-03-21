@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:r_dotted_line_border/r_dotted_line_border.dart';
 import 'package:turfy/Common_Widgets/Common_Button.dart';
-import 'package:turfy/Src/Apply_Coupon_Ui/Apply_Coupon_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 import 'package:turfy/utilits/Text_Style.dart';
 

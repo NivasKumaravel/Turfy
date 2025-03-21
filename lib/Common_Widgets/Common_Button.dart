@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:turfy/Src/Apply_Coupon_Ui/Apply_Coupon_Screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../utilits/Common_Colors.dart';
 import '../utilits/Text_Style.dart';

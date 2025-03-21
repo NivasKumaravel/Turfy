@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "259967774612",
+    "project_id": "turfy-66799",
+    "storage_bucket": "turfy-66799.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259967774612:android:73b8cce427fed4025ba981",
+        "android_client_info": {
+          "package_name": "com.spaaztech.turfy.turfy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_qB6VyUp46A3BltVBwvauXmTZwFqBhD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:turfy/Src/Home_Page_Ui/Home_Page_Screen.dart';
-import 'package:turfy/Src/My_Booking_Ui/My_Booking_Screen.dart';
-import 'package:turfy/Src/My_Notification_Ui/My_Notification_Sceen.dart';
-import 'package:turfy/Src/Profile_Ui/Edit_Profile_Screen.dart';
+import 'package:turfy/Src/Main/Home/Home_Page_Ui/Home_Page_Screen.dart';
+import 'package:turfy/Src/Main/MyBookings/My_Booking_Ui/My_Booking_Screen.dart';
+import 'package:turfy/Src/Main/Notification/My_Notification_Ui/My_Notification_Sceen.dart';
+import 'package:turfy/Src/Main/Profile_Ui/Edit_Profile_Screen.dart';
 import 'package:turfy/utilits/Common_Colors.dart';
 
 

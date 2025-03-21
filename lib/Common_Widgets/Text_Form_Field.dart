@@ -106,7 +106,7 @@ Widget TextFieldDatePicker({TextEditingController? Controller,
   void Function(String)? onChanged,required String hintText,void Function()? onTap}){
   return  TextFormField(
     controller:Controller ,
-     autovalidateMode: AutovalidateMode.onUserInteraction,
+    autovalidateMode: AutovalidateMode.onUserInteraction,
     onTap: onTap,
     readOnly: true,
     keyboardType: TextInputType.number,
